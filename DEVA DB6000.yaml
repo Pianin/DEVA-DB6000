@@ -1,0 +1,637 @@
+zabbix_export:
+  version: '6.0'
+  date: '2025-01-23T10:49:01Z'
+  groups:
+    - uuid: 39f72559f98a45b2954a6b820fb643aa
+      name: DEVA
+  templates:
+    - uuid: 4d71177125724b7892c2b4a1b0d5dbbe
+      template: 'Vera DEVA DB6000'
+      name: 'Vera DEVA DB6000'
+      templates:
+        - name: 'Generic SNMP'
+      groups:
+        - name: DEVA
+      items:
+        - uuid: 7fe65f8ee45746f8962f276d623d6fba
+          name: 'DEVA 6000 aAUX_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.29.0
+          key: deva.monitoring.aauxl.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'aAUX_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 7f2db61e23e349c5bcc18e312783094f
+          name: 'DEVA 6000 aAUX_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.32.0
+          key: deva.monitoring.aauxr.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'aAUX_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 578a966174c246c39b76d3483825a10f
+          name: 'DEVA 6000 aMAIN_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.23.0
+          key: deva.monitoring.amainl.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'aMAIN_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: ece8d72e074a44d4b4175699325bdb83
+          name: 'DEVA 6000 aMAIN_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.26.0
+          key: deva.monitoring.amainr.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'aMAIN_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 364e26c96587477cac4091e431dcd42d
+          name: 'DEVA 6000 dAUX_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.41.0
+          key: deva.monitoring.dauxl.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'dAUX_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: a5fdfd3c507e4ecf93c958e18724f807
+          name: 'DEVA 6000 dAUX_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.44.0
+          key: deva.monitoring.dauxr.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'dAUX_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: abef134e6c8b4afdb51aed8e952de455
+          name: 'DEVA 6000 dMAIN_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.35.0
+          key: deva.monitoring.dmainl.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'dMAIN_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 088ff67d12f1451db75f2b97831f7240
+          name: 'DEVA 6000 dMAIN_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.38.0
+          key: deva.monitoring.dmainr.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'dMAIN_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: def9b5d3fa0f4f309aa8dcb59218dd35
+          name: 'First fallback source'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.7.1.0
+          key: deva.monitoring.fallback.1
+          delay: 1h
+          history: 30d
+          description: 'First fallback source'
+          valuemap:
+            name: 'DEVA 6000 Fallback source'
+          tags:
+            - tag: devamonitoring
+              value: fallback
+        - uuid: e79812ca9d2145db8156e77c80f6a061
+          name: 'Second fallback source'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.7.2.0
+          key: deva.monitoring.fallback.2
+          delay: 1h
+          history: 30d
+          description: 'Second fallback source'
+          valuemap:
+            name: 'DEVA 6000 Fallback source'
+          tags:
+            - tag: devamonitoring
+              value: fallback
+        - uuid: 86ff02284b0241b29ae76015d991d05a
+          name: 'Third fallback source'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.7.3.0
+          key: deva.monitoring.fallback.3
+          delay: 1h
+          history: 30d
+          description: 'Third fallback source'
+          valuemap:
+            name: 'DEVA 6000 Fallback source'
+          tags:
+            - tag: devamonitoring
+              value: fallback
+        - uuid: 32820c35a70d48e39e1fa1abd292d0ed
+          name: 'Fallback TimeOut'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.7.5.0
+          key: deva.monitoring.fallback.timeout
+          delay: 1h
+          history: 30d
+          units: s
+          description: 'Fallback TimeOut'
+          tags:
+            - tag: devamonitoring
+              value: fallback
+        - uuid: 5b04d79809fe456497e65d06d835811a
+          name: 'Fallback Loss treshhold'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.7.4.0
+          key: deva.monitoring.fallback.valueth
+          delay: 10m
+          history: 30d
+          value_type: FLOAT
+          units: dB
+          description: 'Fallback Loss treshhold'
+          tags:
+            - tag: devamonitoring
+              value: fallback
+        - uuid: 4f04dd9748f24137b6289820e7f8a15c
+          name: 'DEVA 6000 INPUT_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.5.0
+          key: deva.monitoring.inputl.value
+          value_type: FLOAT
+          units: dBFS
+          description: 'INPUT_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'inputs value'
+        - uuid: 161c08c8a19d46d088555716b2bb716b
+          name: 'DEVA 6000 INPUT_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.8.0
+          key: deva.monitoring.inputr.value
+          value_type: FLOAT
+          units: dBFS
+          description: 'INPUT_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'inputs value'
+        - uuid: 36e01880603e4735902c88a0634c5b71
+          name: 'DEVA 6000 MP3_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.47.0
+          key: deva.monitoring.mp3l.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'MP3_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0039'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 324c223f8f1748aa94f3106567d57ff8
+          name: 'DEVA 6000 MP3_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.50.0
+          key: deva.monitoring.mp3r.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBFS
+          description: 'MP3_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0039'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 0b11fc5c22ea477596a21a8b79b91f03
+          name: 'DEVA 6000 MPX_DEV Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.17.0
+          key: deva.monitoring.mpxdev.value
+          delay: 5m
+          value_type: FLOAT
+          units: '%'
+          description: 'MPX_DEV Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0078'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+            - tag: output
+              value: MPX
+        - uuid: 792c6b8bb5b044e3bb40897201c6fed8
+          name: 'DEVA 6000 MPX_POWER Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.20.0
+          key: deva.monitoring.mpxpower.value
+          delay: 5m
+          value_type: FLOAT
+          units: dBr
+          description: 'MPX_POWER Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0039'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+            - tag: output
+              value: MPX
+        - uuid: 5735be73d0164c1fa92c828f31880c2e
+          name: 'DEVA 6000 OUTPUT_L Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.11.0
+          key: deva.monitoring.outputl.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'OUTPUT_L Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0039'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 41ba6e8ea96c4360abe4713ef0d47735
+          name: 'DEVA 6000 OUTPUT_R Value'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.14.0
+          key: deva.monitoring.outputr.value
+          delay: 30s
+          value_type: FLOAT
+          units: dBFS
+          description: 'OUTPUT_R Value'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.0039'
+          tags:
+            - tag: devamonitoring
+              value: 'outputs value'
+        - uuid: 3e65863ce99f43798e59096a5e7368bc
+          name: 'mntr Preset'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.3.0
+          key: deva.monitoring.preset
+          delay: 15m
+          valuemap:
+            name: 'DEVA 6000  Preset'
+          tags:
+            - tag: devamonitoring
+              value: preset
+        - uuid: 0b99116dc3834916b431489b9bb3ad37
+          name: 'mntr Preset AppliedBy'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.4.0
+          key: deva.monitoring.preset.appliedby
+          delay: 15m
+          description: 'mntr Preset AppliedBy'
+          valuemap:
+            name: 'DEVA 6000  Preset AppliedBy'
+          tags:
+            - tag: devamonitoring
+              value: preset
+        - uuid: bf4ba9c58394452f9e368bc4cf77d8fb
+          name: 'mntr Source'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.1.0
+          key: deva.monitoring.source
+          delay: 15s
+          history: 30d
+          description: 'mntr Source'
+          valuemap:
+            name: 'DEVA 6000 Source'
+          tags:
+            - tag: devamonitoring
+              value: source
+          triggers:
+            - uuid: e5014008872c4dfb99522bc0c688aa20
+              expression: 'last(/Vera DEVA DB6000/deva.monitoring.source)<>{$SOURCE}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Vera DEVA DB6000/deva.monitoring.source)={$SOURCE}'
+              name: 'Source on {HOST.NAME} is changed!!'
+              priority: WARNING
+              description: 'Проверка используемого source.'
+        - uuid: fc571884f7b440a0a6914943b489d930
+          name: 'mntr Source AppliedBy'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.3.2.0
+          key: deva.monitoring.source.applayedby
+          delay: 30s
+          history: 30d
+          description: 'mntr source appliedby'
+          valuemap:
+            name: 'DEVA 6000  Source AppliedBy'
+          tags:
+            - tag: devamonitoring
+              value: source
+        - uuid: e0538af86f58464985b744486520ccc4
+          name: 'Stream Buffering timeout'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.9.5.0
+          key: deva.monitoring.streamclient.bufftimeout
+          delay: 5m
+          history: 30d
+          units: s
+          description: 'Buffering timeout'
+          tags:
+            - tag: devamonitoring
+              value: 'stream client'
+        - uuid: b59630b58a2b46219711fd213d13096a
+          name: 'Stream Decoder'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.9.2.0
+          key: deva.monitoring.streamclient.decoder
+          delay: 5m
+          history: 30d
+          description: 'Server URL and port'
+          valuemap:
+            name: 'DEVA 6000 Stream Decoder'
+          tags:
+            - tag: devamonitoring
+              value: 'stream client'
+        - uuid: a900b055a1694ed4be207f2419028919
+          name: 'Stream Data pre-buffer'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.9.4.0
+          key: deva.monitoring.streamclient.prebuff
+          delay: 5m
+          history: 30d
+          units: s
+          description: 'Data pre-buffer'
+          tags:
+            - tag: devamonitoring
+              value: 'stream client'
+        - uuid: 7e33181f3fcf4e238ba61118d21de0b3
+          name: 'Stream URL'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.1.9.1.0
+          key: deva.monitoring.streamclient.url
+          delay: 5m
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          description: 'Server URL and port'
+          tags:
+            - tag: devamonitoring
+              value: 'stream client'
+          triggers:
+            - uuid: 067a6038b8bc4ef4a28024516d6b9fbe
+              expression: 'last(/Vera DEVA DB6000/deva.monitoring.streamclient.url)<>{$STREAM.URL}'
+              recovery_mode: RECOVERY_EXPRESSION
+              recovery_expression: 'last(/Vera DEVA DB6000/deva.monitoring.streamclient.url)={$STREAM.URL}'
+              name: 'Stream URL is NOT normal on {HOST.NAME}'
+              priority: WARNING
+        - uuid: 8ac2f62e241c4d3cbe5e4d7e663c5d84
+          name: Alias
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.2.5.1.0
+          key: system.alias
+          delay: 1h
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          description: 'Alias name for device'
+          inventory_link: ALIAS
+          tags:
+            - tag: component
+              value: system
+        - uuid: 43332b20dc7f4175818b9289c2d0d704
+          name: 'Hardware serial number'
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.1.2.0
+          key: system.hw.serialnumber
+          delay: 1h
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          description: 'Serial number'
+          inventory_link: SERIALNO_A
+          tags:
+            - tag: component
+              value: system
+        - uuid: 9db9164684304c6ea6568bf52d570d94
+          name: Firmware
+          type: SNMP_AGENT
+          snmp_oid: 1.3.6.1.4.1.35833.19.1.1.0
+          key: system.sw.firmware
+          delay: 1h
+          history: 30d
+          trends: '0'
+          value_type: TEXT
+          description: 'Firmware revision'
+          inventory_link: SOFTWARE
+          tags:
+            - tag: component
+              value: system
+      tags:
+        - tag: class
+          value: hardware
+        - tag: target
+          value: 'DEVA DB6000'
+        - tag: target
+          value: 'FM/HD Processing'
+      macros:
+        - macro: '{$SOURCE}'
+          value: '3'
+        - macro: '{$STREAM.URL}'
+          value: 'http://radiovera.hostingradio.ru:8007/radiovera_128'
+          description: 'URL on media stream for IP stream player'
+      valuemaps:
+        - uuid: 8b45e72cd7984982b6c5f7bf86e3fd09
+          name: 'DEVA 6000 AES Lock'
+          mappings:
+            - value: '0'
+              newvalue: noLock
+            - value: '1'
+              newvalue: aesLock
+        - uuid: e70c9d76a72a49daac5847b3884823c3
+          name: 'DEVA 6000 Fallback source'
+          mappings:
+            - value: '0'
+              newvalue: inselNotUsed
+            - value: '1'
+              newvalue: inselMainAnalog
+            - value: '2'
+              newvalue: inselAUXAnalog
+            - value: '3'
+              newvalue: inselMainDigita
+            - value: '4'
+              newvalue: inselAUXDigital
+            - value: '5'
+              newvalue: inselMP3Player
+            - value: '6'
+              newvalue: inselIPStream
+        - uuid: ebcb1a4ca7c346989b6b632acd28d3f0
+          name: 'DEVA 6000  Preset'
+          mappings:
+            - value: '0'
+              newvalue: presUser1
+            - value: '1'
+              newvalue: presUser2
+            - value: '2'
+              newvalue: presUser3
+            - value: '3'
+              newvalue: presUser4
+            - value: '4'
+              newvalue: presUser5
+            - value: '5'
+              newvalue: presUser6
+            - value: '6'
+              newvalue: presUser7
+            - value: '7'
+              newvalue: presUser8
+            - value: '8'
+              newvalue: presUser9
+            - value: '9'
+              newvalue: presUser10
+            - value: '10'
+              newvalue: presFactory1
+            - value: '11'
+              newvalue: presFactory2
+            - value: '12'
+              newvalue: presFactory3
+            - value: '13'
+              newvalue: presFactory4
+            - value: '14'
+              newvalue: presFactory5
+            - value: '15'
+              newvalue: presFactory6
+            - value: '16'
+              newvalue: presFactory7
+            - value: '17'
+              newvalue: presFactory8
+            - value: '18'
+              newvalue: presFactory9
+            - value: '19'
+              newvalue: presFactory10
+        - uuid: 5762d67a056642f393c6c808838c3448
+          name: 'DEVA 6000  Preset AppliedBy'
+          mappings:
+            - value: '3'
+              newvalue: appliedUserSelected
+            - value: '4'
+              newvalue: appliedGPITriggered
+            - value: '5'
+              newvalue: appliedDaypartTriggered
+        - uuid: 8b09598f21a14fed978111070c610925
+          name: 'DEVA 6000 Source'
+          mappings:
+            - value: '1'
+              newvalue: inselMainAnalog
+            - value: '2'
+              newvalue: inselAUXAnalog
+            - value: '3'
+              newvalue: inselMainDigital
+            - value: '4'
+              newvalue: inselAUXDigital
+            - value: '5'
+              newvalue: inselMP3Player
+            - value: '6'
+              newvalue: inselIPStream
+        - uuid: be438cddc6dc46d19512c67fdb62eb50
+          name: 'DEVA 6000  Source AppliedBy'
+          mappings:
+            - value: '1'
+              newvalue: appliedBackupActive
+            - value: '2'
+              newvalue: appliedMainRecovered
+        - uuid: f9321e0af0b94e57b4e5101e3cdd83cd
+          name: 'DEVA 6000 Stream Decoder'
+          mappings:
+            - value: '1'
+              newvalue: codecAuto
+            - value: '2'
+              newvalue: codecMP3Auto
+            - value: '3'
+              newvalue: codecHEMinusAACAuto
+            - value: '4'
+              newvalue: codecPCM32kHz
+            - value: '5'
+              newvalue: codecPCM44p1kHz
+            - value: '6'
+              newvalue: codecPCM48kHz
+  triggers:
+    - uuid: 3df1636e338240f4b68e0fe32c19d18e
+      expression: 'avg(/Vera DEVA DB6000/deva.monitoring.dmainr.value,5m)<=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth) and avg(/Vera DEVA DB6000/deva.monitoring.dmainl.value,5m)<=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth)'
+      recovery_mode: RECOVERY_EXPRESSION
+      recovery_expression: 'avg(/Vera DEVA DB6000/deva.monitoring.dmainl.value,5m)>=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth) and avg(/Vera DEVA DB6000/deva.monitoring.dmainr.value,5m)>=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth)'
+      name: 'DMAIN Value on {HOST.NAME} is down'
+      status: DISABLED
+      priority: WARNING
+      description: 'Checking DMAIN Value'
+      manual_close: 'YES'
+    - uuid: 84a2378472174efbac2bec68f552867e
+      expression: 'avg(/Vera DEVA DB6000/deva.monitoring.outputl.value,5m)<=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth) and avg(/Vera DEVA DB6000/deva.monitoring.outputr.value,5m)<=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth)'
+      recovery_mode: RECOVERY_EXPRESSION
+      recovery_expression: 'avg(/Vera DEVA DB6000/deva.monitoring.outputl.value,5m)>=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth) and avg(/Vera DEVA DB6000/deva.monitoring.outputr.value,5m)>=last(/Vera DEVA DB6000/deva.monitoring.fallback.valueth)'
+      name: 'OUTPUT Value on {HOST.NAME} is SILENCE'
+      priority: HIGH
+      description: 'Checking OUTPUT Value'
